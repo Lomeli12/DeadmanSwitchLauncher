@@ -69,9 +69,6 @@
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="Util\RegistryUtil.cs" />
         <Compile Include="Util\SteamUtil.cs" />
-        <EmbeddedResource Include="DBDInstallPrompt.resx">
-          <DependentUpon>DBDInstallPrompt.cs</DependentUpon>
-        </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.en-us.resx" />
         <EmbeddedResource Include="Properties\Resources.en.resx" />
         <EmbeddedResource Include="Properties\Resources.resx">
