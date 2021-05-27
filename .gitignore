@@ -1,0 +1,6 @@
+.idea/
+DeadmanSwitchLauncher/bin/
+DeadmanSwitchLauncher/obj/
+packages/
+
+*.DotSettings.user
