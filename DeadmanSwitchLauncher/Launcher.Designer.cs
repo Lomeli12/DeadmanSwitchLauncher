@@ -156,7 +156,7 @@ namespace DeadmanSwitchLauncher {
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Name = "Launcher";
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LauncherClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.launcherClosing);
             this.controlPanel.ResumeLayout(false);
             this.buildTypePanel.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -1,7 +1,20 @@
+using System.Diagnostics;
 using Microsoft.Win32;
 
 namespace DeadmanSwitchLauncher.Util {
     public class SteamUtil {
+        public static void closeSteam() {
+            var processes = Process.GetProcessesByName(Consts.STEAM_PROCESS);
+            if (processes.Length <= 0) return;
+            foreach (var pro in processes) {
+                pro.Kill();
+            }
+        }
+
+        public static void startSteam() {
+            Process.Start(getSteamInstallPath());
+        }
+
         private static string getInstallPath(RegistryHive hive, string key, string entry) {
             var installPath = "";
 

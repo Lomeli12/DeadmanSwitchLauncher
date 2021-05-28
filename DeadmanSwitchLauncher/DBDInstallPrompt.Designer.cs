@@ -49,8 +49,8 @@ namespace DeadmanSwitchLauncher {
             // 
             // openBrowserBtn
             // 
-            this.openBrowserBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.openBrowserBtn.Location = new System.Drawing.Point(361, 30);
+            this.openBrowserBtn.Font = new System.Drawing.Font("Roboto", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.openBrowserBtn.Location = new System.Drawing.Point(361, 27);
             this.openBrowserBtn.Name = "openBrowserBtn";
             this.openBrowserBtn.Size = new System.Drawing.Size(75, 28);
             this.openBrowserBtn.TabIndex = 2;
@@ -59,7 +59,7 @@ namespace DeadmanSwitchLauncher {
             // 
             // finishedBtn
             // 
-            this.finishedBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.finishedBtn.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.finishedBtn.Location = new System.Drawing.Point(12, 59);
             this.finishedBtn.Name = "finishedBtn";
             this.finishedBtn.Size = new System.Drawing.Size(424, 42);

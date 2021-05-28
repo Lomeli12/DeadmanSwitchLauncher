@@ -52,6 +52,12 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="BuildPrompt.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="BuildPrompt.Designer.cs">
+          <DependentUpon>BuildPrompt.cs</DependentUpon>
+        </Compile>
         <Compile Include="Config\DBDBuild.cs" />
         <Compile Include="Config\DMSLConfig.cs" />
         <Compile Include="Consts.cs" />

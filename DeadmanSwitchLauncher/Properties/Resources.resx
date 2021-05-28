@@ -151,4 +151,22 @@
   <data name="dbdLauncherStart" xml:space="preserve">
     <value>Launch Game</value>
   </data>
+  <data name="dbdBuildPromptCancel" xml:space="preserve">
+    <value>This launcher is useless till you go through the setup!</value>
+  </data>
+  <data name="dbdBuildPromptCancelTitle" xml:space="preserve">
+    <value>Close Canceled</value>
+  </data>
+  <data name="dbdBuildPromptLabel" xml:space="preserve">
+    <value>Do you have the Live or PTB currently installed?</value>
+  </data>
+  <data name="dbdBuildPromptLive" xml:space="preserve">
+    <value>Live</value>
+  </data>
+  <data name="dbdBuildPromptPTB" xml:space="preserve">
+    <value>PTB</value>
+  </data>
+  <data name="dbdBuildPromptTitle" xml:space="preserve">
+    <value>Live or PTB</value>
+  </data>
 </root>

@@ -61,6 +61,60 @@ namespace DeadmanSwitchLauncher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This launcher is useless till you go through the setup!.
+        /// </summary>
+        internal static string dbdBuildPromptCancel {
+            get {
+                return ResourceManager.GetString("dbdBuildPromptCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Close Canceled.
+        /// </summary>
+        internal static string dbdBuildPromptCancelTitle {
+            get {
+                return ResourceManager.GetString("dbdBuildPromptCancelTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Do you have the Live or PTB currently installed?.
+        /// </summary>
+        internal static string dbdBuildPromptLabel {
+            get {
+                return ResourceManager.GetString("dbdBuildPromptLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Live.
+        /// </summary>
+        internal static string dbdBuildPromptLive {
+            get {
+                return ResourceManager.GetString("dbdBuildPromptLive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PTB.
+        /// </summary>
+        internal static string dbdBuildPromptPTB {
+            get {
+                return ResourceManager.GetString("dbdBuildPromptPTB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Live or PTB.
+        /// </summary>
+        internal static string dbdBuildPromptTitle {
+            get {
+                return ResourceManager.GetString("dbdBuildPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open.
         /// </summary>
         internal static string dbdInstallPromptButton {

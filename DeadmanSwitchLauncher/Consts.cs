@@ -5,7 +5,9 @@ namespace DeadmanSwitchLauncher {
     public class Consts {
         // Executables
         public static readonly string DBD_EXE = "DeadByDaylight.exe";
-        public static readonly string STEAM_EXE = "steam.exe";
+        
+        // PROCESSES
+        public static readonly string STEAM_PROCESS = "steam";
 
         // Install directories
         public static readonly string CURRENT_FOLDER = "Dead by Daylight";
@@ -22,7 +24,7 @@ namespace DeadmanSwitchLauncher {
         public static readonly string DBD_LOCATION_KEY = UNINSTALL_SUBKEY + @"\Steam App 381210";
         public static readonly string DBD_INSTALL_KEY = "InstallLocation";
         public static readonly string STEAM_SUBKEY = @"SOFTWARE\Valve\Steam";
-        public static readonly string STEAM_PATH_KEY = "SteamPath";
+        public static readonly string STEAM_PATH_KEY = "SteamExe";
 
         // Config
         public static readonly string DATA_FOLDER = Path.Combine(

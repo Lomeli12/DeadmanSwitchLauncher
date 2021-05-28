@@ -8,14 +8,18 @@ namespace DeadmanSwitchLauncher {
     public sealed partial class DBDInstallPrompt : Form {
         public DBDInstallPrompt() {
             InitializeComponent();
+            initLocalization();
+            
+            var dbdPath = SteamUtil.getDBDInstallPath();
+            if (!string.IsNullOrWhiteSpace(dbdPath))
+                pathTextBox.Text = dbdPath;
+        }
+
+        private void initLocalization() {
             Text = Resources.dbdInstallPromptTitle;
             installLabel.Text = Resources.dbdInstallPromptLabel;
             openBrowserBtn.Text = Resources.dbdInstallPromptButton;
             finishedBtn.Text = Resources.dbdInstallPromptFinished;
-
-            var dbdPath = SteamUtil.getDBDInstallPath();
-            if (!string.IsNullOrWhiteSpace(dbdPath))
-                pathTextBox.Text = dbdPath;
         }
 
         private void openBrowserBtn_Click(object sender, EventArgs e) {
