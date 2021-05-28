@@ -1,5 +1,4 @@
 using System.ComponentModel;
-using DeadmanSwitchLauncher.Properties;
 
 namespace DeadmanSwitchLauncher {
     sealed partial class DBDInstallPrompt {

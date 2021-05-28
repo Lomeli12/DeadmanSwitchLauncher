@@ -127,4 +127,13 @@
   <data name="dbdInstallPromptFinished" xml:space="preserve">
     <value>Done</value>
   </data>
+  <data name="dbdMainFormTitle" xml:space="preserve">
+    <value>Deadman Switch Launcher</value>
+  </data>
+  <data name="dbdInstallPromptInvalid" xml:space="preserve">
+    <value>Please choose a valid DBD install folder</value>
+  </data>
+  <data name="dbdInstallPromptInvalidTitle" xml:space="preserve">
+    <value>Invalid DBD Install Path</value>
+  </data>
 </root>
