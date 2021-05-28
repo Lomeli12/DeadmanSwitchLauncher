@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+
 namespace DeadmanSwitchLauncher {
     public class Consts {
         // Executables
@@ -20,5 +23,10 @@ namespace DeadmanSwitchLauncher {
         public static readonly string DBD_INSTALL_KEY = "InstallLocation";
         public static readonly string STEAM_SUBKEY = @"SOFTWARE\Valve\Steam";
         public static readonly string STEAM_PATH_KEY = "SteamPath";
+
+        // Config
+        public static readonly string DATA_FOLDER = Path.Combine(
+            Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DeadmanSwitchLauncher");
+        public static readonly string CONFIG_FILE = Path.Combine(DATA_FOLDER, "config.cfg");
     }
 }

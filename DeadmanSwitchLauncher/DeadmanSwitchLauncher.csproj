@@ -52,6 +52,8 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Config\DBDBuild.cs" />
+        <Compile Include="Config\DMSLConfig.cs" />
         <Compile Include="Consts.cs" />
         <Compile Include="DBDInstallPrompt.cs">
           <SubType>Form</SubType>
