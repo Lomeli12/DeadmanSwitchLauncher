@@ -115,11 +115,47 @@ namespace DeadmanSwitchLauncher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Live.
+        /// </summary>
+        internal static string dbdLauncherRadioLive {
+            get {
+                return ResourceManager.GetString("dbdLauncherRadioLive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PTB.
+        /// </summary>
+        internal static string dbdLauncherRadioPTB {
+            get {
+                return ResourceManager.GetString("dbdLauncherRadioPTB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string dbdLauncherSettings {
+            get {
+                return ResourceManager.GetString("dbdLauncherSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launch Game.
+        /// </summary>
+        internal static string dbdLauncherStart {
+            get {
+                return ResourceManager.GetString("dbdLauncherStart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deadman Switch Launcher.
         /// </summary>
-        internal static string dbdMainFormTitle {
+        internal static string dbdLauncherTitle {
             get {
-                return ResourceManager.GetString("dbdMainFormTitle", resourceCulture);
+                return ResourceManager.GetString("dbdLauncherTitle", resourceCulture);
             }
         }
     }
