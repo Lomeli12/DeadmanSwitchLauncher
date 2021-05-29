@@ -94,6 +94,7 @@ namespace DeadmanSwitchLauncher {
             this.launchBtn.Text = "button1";
             this.launchBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.launchBtn.UseVisualStyleBackColor = true;
+            this.launchBtn.Click += new System.EventHandler(this.launchBtn_Click);
             // 
             // buildTypePanel
             // 

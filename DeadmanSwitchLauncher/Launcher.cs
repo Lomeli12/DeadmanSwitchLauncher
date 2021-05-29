@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 using DeadmanSwitchLauncher.Config;
@@ -24,6 +25,41 @@ namespace DeadmanSwitchLauncher {
 
             configSetup();
             setupBuilds();
+        }
+
+        private void launchBtn_Click(object sender, EventArgs e) {
+            // I really really hate this
+            var build = DMSLConfig.getConfig().dbdBuild;
+            if ((build == DBDBuild.LIVE && !liveBuildRadio.Checked) ||
+                (build == DBDBuild.PTB && !ptbBuildRadio.Checked)) {
+                DMSLConfig.getConfig().dbdBuild = DBDBuildUtil.opposite(build);
+                build = DMSLConfig.getConfig().dbdBuild;
+
+                switch (build) {
+                    case DBDBuild.LIVE:
+                        swapFolders(ptbFolder, liveFolder,
+                            Path.Combine(appFolder, Consts.LIVE_MANIFEST));
+                        break;
+                    case DBDBuild.PTB:
+                        swapFolders(liveFolder, ptbFolder,
+                            Path.Combine(appFolder, Consts.PTB_MANIFEST));
+                        break;
+                    default:
+                        Console.WriteLine(Resources.dbdInstallHow);
+                        break;
+                }
+            }
+
+            Process.Start("steam://rungameid/" + Consts.DBD_STEAM_ID);
+        }
+
+        private void swapFolders(string oldFolder, string newFolder, string newManifest) {
+            if (!Directory.Exists(oldFolder))
+                Directory.Move(DMSLConfig.getConfig().dbdPath, oldFolder);
+            if (Directory.Exists(newFolder))
+                Directory.Move(newFolder, DMSLConfig.getConfig().dbdPath);
+
+            File.Copy(newManifest, Path.Combine(appFolder, Consts.CURRENT_MANIFEST), true);
         }
 
         private void configSetup() {
@@ -96,7 +132,7 @@ namespace DeadmanSwitchLauncher {
             }
 
             Directory.Move(DMSLConfig.getConfig().dbdPath, targetFolder);
-            File.Copy(currentManifest, targetManifest);
+            File.Copy(currentManifest, targetManifest, true);
             Directory.CreateDirectory(DMSLConfig.getConfig().dbdPath);
 
             SteamUtil.startSteam();
