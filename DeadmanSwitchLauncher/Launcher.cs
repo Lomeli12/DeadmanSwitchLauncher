@@ -20,11 +20,11 @@ namespace DeadmanSwitchLauncher {
             settingsBtn.Text = Resources.dbdLauncherSettings;
             launchBtn.Text = Resources.dbdLauncherStart;
 
-            liveBuildRadio.Checked = DMSLConfig.getConfig().dbdBuild == DBDBuild.LIVE;
-            ptbBuildRadio.Checked = DMSLConfig.getConfig().dbdBuild == DBDBuild.PTB;
-
             configSetup();
             setupBuilds();
+
+            liveBuildRadio.Checked = DMSLConfig.getConfig().dbdBuild == DBDBuild.LIVE;
+            ptbBuildRadio.Checked = DMSLConfig.getConfig().dbdBuild == DBDBuild.PTB;
         }
 
         private void launchBtn_Click(object sender, EventArgs e) {
