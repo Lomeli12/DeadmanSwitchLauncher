@@ -35,6 +35,7 @@ namespace DeadmanSwitchLauncher {
             // 
             // installLabel
             // 
+            this.installLabel.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.installLabel.Location = new System.Drawing.Point(12, 9);
             this.installLabel.Name = "installLabel";
             this.installLabel.Size = new System.Drawing.Size(424, 19);
@@ -42,9 +43,10 @@ namespace DeadmanSwitchLauncher {
             // 
             // pathTextBox
             // 
+            this.pathTextBox.Font = new System.Drawing.Font("Roboto", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.pathTextBox.Location = new System.Drawing.Point(12, 31);
             this.pathTextBox.Name = "pathTextBox";
-            this.pathTextBox.Size = new System.Drawing.Size(343, 22);
+            this.pathTextBox.Size = new System.Drawing.Size(343, 23);
             this.pathTextBox.TabIndex = 1;
             // 
             // openBrowserBtn
