@@ -14,6 +14,7 @@ namespace DeadmanSwitchLauncher.Config {
         public DBDBuild dbdBuild { get; set; }
         public bool keepOpenOnLaunch { get; set; }
 
+        // Checks to see if config file exists. If it does, deserialize it into an instance of config. If not, create it.
         private static void initConfig() {
             if (!Directory.Exists(Consts.DATA_FOLDER))
                 Directory.CreateDirectory(Consts.DATA_FOLDER);
@@ -35,6 +36,7 @@ namespace DeadmanSwitchLauncher.Config {
             return instance;
         }
 
+        // Serializes config instance into JSON and writes it to disk
         public static DMSLConfig saveConfig() {
             if (instance == null) return instance;
             using (var stream = new FileStream(Consts.CONFIG_FILE, FileMode.Create, FileAccess.Write, FileShare.Read))
@@ -43,6 +45,7 @@ namespace DeadmanSwitchLauncher.Config {
             return instance;
         }
 
+        // Deletes launcher configs and clears out any remaining launcher files located in the same folder as DBD
         public static void clearSettings() {
             if (instance == null) return;
             Directory.Delete(Consts.DATA_FOLDER, true);

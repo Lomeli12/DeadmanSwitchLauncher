@@ -2,7 +2,7 @@ using Microsoft.Win32;
 
 namespace DeadmanSwitchLauncher.Util {
     public class RegistryUtil {
-
+        // Gets the value of a registry entry from the specified base key and sub key
         public static object getKeyValue(RegistryHive hive, string key, string entry) {
             // Tries to get the keys from Registry64, as otherwise using normal Registy.LocalMachine only gets 32bit keys
             using (var registryKey = RegistryKey.OpenBaseKey(hive, RegistryView.Registry64).OpenSubKey(key)) {

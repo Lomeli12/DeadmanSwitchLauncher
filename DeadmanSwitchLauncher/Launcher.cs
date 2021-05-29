@@ -15,12 +15,7 @@ namespace DeadmanSwitchLauncher {
 
         public Launcher() {
             InitializeComponent();
-
-            Text = Resources.dbdLauncherTitle;
-            liveBuildRadio.Text = Resources.dbdLauncherRadioLive;
-            ptbBuildRadio.Text = Resources.dbdLauncherRadioPTB;
-            settingsBtn.Text = Resources.dbdLauncherSettings;
-            launchBtn.Text = Resources.dbdLauncherStart;
+            initLocalization();
 
             configSetup();
             setupBuilds();
@@ -29,6 +24,15 @@ namespace DeadmanSwitchLauncher {
             ptbBuildRadio.Checked = DMSLConfig.getConfig().dbdBuild == DBDBuild.PTB;
         }
 
+        private void initLocalization() {
+            Text = Resources.dbdLauncherTitle;
+            liveBuildRadio.Text = Resources.dbdLauncherRadioLive;
+            ptbBuildRadio.Text = Resources.dbdLauncherRadioPTB;
+            settingsBtn.Text = Resources.dbdLauncherSettings;
+            launchBtn.Text = Resources.dbdLauncherStart;
+        }
+
+        // Attempts to launch the game. If a swap is necessary, it tries to swap the builds before attempting to launch
         private void launchBtn_Click(object sender, EventArgs e) {
             // I really really hate this
             var build = DMSLConfig.getConfig().dbdBuild;
@@ -64,6 +68,7 @@ namespace DeadmanSwitchLauncher {
             if (!DMSLConfig.getConfig().keepOpenOnLaunch) Close();
         }
 
+        // Swap the currently running build with the saved build (i.e. Live <-> PTB)
         private void swapFolders(string oldFolder, string newFolder, string newManifest) {
             if (!Directory.Exists(oldFolder))
                 Directory.Move(DMSLConfig.getConfig().dbdPath, oldFolder);
@@ -73,6 +78,8 @@ namespace DeadmanSwitchLauncher {
             File.Copy(newManifest, Path.Combine(appFolder, Consts.CURRENT_MANIFEST), true);
         }
 
+        // Prompts the user to give the install location of DBD. It'll attempt to auto retrieve this info from registry
+        // but gives the user a chance to point to the directory themselves
         private void configSetup() {
             if (!Directory.Exists(DMSLConfig.getConfig().dbdPath))
                 DMSLConfig.isNewConfig = true;
@@ -86,6 +93,9 @@ namespace DeadmanSwitchLauncher {
             }
         }
 
+        // Setup process for getting the launcher to work. First it gets a copy of both the Live and PTB builds of 
+        // the game and app manifest, renames them accordingly as to not overwrite each other, and then restores
+        // whichever the user initially had installed
         private void setupBuilds() {
             var parentDir = Directory.GetParent(DMSLConfig.getConfig().dbdPath);
             if (parentDir == null) {
@@ -124,6 +134,7 @@ namespace DeadmanSwitchLauncher {
             }
         }
 
+        // Makes a copy of either the Live or PTB build folder and app manifest
         private void processInstallFolder(DBDBuild build) {
             SteamUtil.closeSteam();
 
@@ -152,11 +163,14 @@ namespace DeadmanSwitchLauncher {
             SteamUtil.startSteam();
         }
 
+        // Save config before closing, if it hasn't been deleted
         private void launcherClosing(object sender, FormClosingEventArgs e) {
             if (saveSettigs)
                 DMSLConfig.saveConfig();
         }
 
+        // Opens the settings dialog. If the user decided to clear their settings,
+        // DON'T SAVE A NEW CONFIG FILE AFTER THEY JUST CHOSE DELETED IT
         private void settingsBtn_Click(object sender, EventArgs e) {
             var settings = new Settings();
             settings.ShowDialog();

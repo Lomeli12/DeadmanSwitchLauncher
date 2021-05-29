@@ -30,7 +30,6 @@ namespace DeadmanSwitchLauncher {
         // Config
         public static readonly string DATA_FOLDER = Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "DeadmanSwitchLauncher");
-
         public static readonly string CONFIG_FILE = Path.Combine(DATA_FOLDER, "config.cfg");
     }
 }
