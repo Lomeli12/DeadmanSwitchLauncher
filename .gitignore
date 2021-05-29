@@ -2,5 +2,6 @@
 DeadmanSwitchLauncher/bin/
 DeadmanSwitchLauncher/obj/
 packages/
+Output/
 
 *.DotSettings.user
