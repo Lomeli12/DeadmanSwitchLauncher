@@ -4,7 +4,7 @@ using DeadmanSwitchLauncher.Config;
 
 namespace DeadmanSwitchLauncher {
     public partial class BuildPrompt : Form {
-        public DBDBuild build { get; set; }
+        public DBDBuild build { get; private set; }
         private bool FINISHED;
 
         public BuildPrompt() {

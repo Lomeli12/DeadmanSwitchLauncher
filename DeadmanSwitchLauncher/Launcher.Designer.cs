@@ -1,5 +1,5 @@
 namespace DeadmanSwitchLauncher {
-    partial class Launcher {
+    sealed partial class Launcher {
         /// <summary>
         /// Required designer variable.
         /// </summary>

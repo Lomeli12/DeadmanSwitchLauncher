@@ -4,7 +4,7 @@ using DeadmanSwitchLauncher.Config;
 using DeadmanSwitchLauncher.Util;
 
 namespace DeadmanSwitchLauncher {
-    public partial class Launcher : Form {
+    public sealed partial class Launcher : Form {
         private string liveFolder { get; set; }
         private string ptbFolder { get; set; }
 
