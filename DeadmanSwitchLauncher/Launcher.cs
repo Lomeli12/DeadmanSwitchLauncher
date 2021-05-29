@@ -67,6 +67,9 @@ namespace DeadmanSwitchLauncher {
                 DMSLConfig.isNewConfig = true;
 
             if (DMSLConfig.isNewConfig) {
+                MessageBox.Show(Resources.dbdDisableAutoUpdate, Resources.dbdDisableAutoUpdateTitle,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 var dbdInstall = new DBDInstallPrompt();
                 dbdInstall.ShowDialog();
             }

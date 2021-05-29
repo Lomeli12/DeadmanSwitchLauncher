@@ -178,4 +178,10 @@
   <data name="dbdInstallHow" xml:space="preserve">
     <value>How'd you end up here?</value>
   </data>
+  <data name="dbdDisableAutoUpdate" xml:space="preserve">
+    <value>Go to Dead By Daylight -&gt; Properties -&gt; Updates and set Automatic Updates to "Only update this game when I launch it"</value>
+  </data>
+  <data name="dbdDisableAutoUpdateTitle" xml:space="preserve">
+    <value>Remember to disable automatic updates for DBD.</value>
+  </data>
 </root>

@@ -115,6 +115,24 @@ namespace DeadmanSwitchLauncher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Go to Dead By Daylight -&gt; Properties -&gt; Updates and set Automatic Updates to &quot;Only update this game when I launch it&quot;.
+        /// </summary>
+        internal static string dbdDisableAutoUpdate {
+            get {
+                return ResourceManager.GetString("dbdDisableAutoUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember to disable automatic updates for DBD..
+        /// </summary>
+        internal static string dbdDisableAutoUpdateTitle {
+            get {
+                return ResourceManager.GetString("dbdDisableAutoUpdateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to How&apos;d you end up here?.
         /// </summary>
         internal static string dbdInstallHow {
