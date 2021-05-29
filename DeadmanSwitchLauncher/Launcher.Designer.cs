@@ -175,8 +175,6 @@ namespace DeadmanSwitchLauncher {
 
         private System.Windows.Forms.Panel buildTypePanel;
 
-        private System.Windows.Forms.Panel dbdTypePanel;
-
         private System.Windows.Forms.Panel controlPanel;
 
         #endregion
