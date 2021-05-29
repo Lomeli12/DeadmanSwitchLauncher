@@ -8,6 +8,8 @@ namespace DeadmanSwitchLauncher {
             InitializeComponent();
 
             initLocalization();
+
+            keepOpenBox.Checked = DMSLConfig.getConfig().keepOpenOnLaunch;
         }
 
         public bool settingsCleared { get; private set; }
