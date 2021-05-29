@@ -7,7 +7,7 @@
         <ProjectGuid>{A38AA9C5-1ABA-4C6A-AE3C-5B5E07C341B2}</ProjectGuid>
         <OutputType>WinExe</OutputType>
         <RootNamespace>DeadmanSwitchLauncher</RootNamespace>
-        <AssemblyName>DeadmanSwitchLauncher</AssemblyName>
+        <AssemblyName>Deadman Switch Launcher</AssemblyName>
         <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,10 @@
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
+        <Prefer32bit>true</Prefer32bit>
+    </PropertyGroup>
+    <PropertyGroup>
+        <ApplicationIcon>Resources\deadmanswitch.ico</ApplicationIcon>
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
