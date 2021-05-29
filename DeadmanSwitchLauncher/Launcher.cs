@@ -1,6 +1,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using DeadmanSwitchLauncher.Config;
 using DeadmanSwitchLauncher.Util;
@@ -35,18 +36,26 @@ namespace DeadmanSwitchLauncher {
                 DMSLConfig.getConfig().dbdBuild = DBDBuildUtil.opposite(build);
                 build = DMSLConfig.getConfig().dbdBuild;
 
-                switch (build) {
-                    case DBDBuild.LIVE:
-                        swapFolders(ptbFolder, liveFolder,
-                            Path.Combine(appFolder, Consts.LIVE_MANIFEST));
-                        break;
-                    case DBDBuild.PTB:
-                        swapFolders(liveFolder, ptbFolder,
-                            Path.Combine(appFolder, Consts.PTB_MANIFEST));
-                        break;
-                    default:
-                        Console.WriteLine(Resources.dbdInstallHow);
-                        break;
+                var swapTask = Task.Run(() => {
+                    switch (build) {
+                        case DBDBuild.LIVE:
+                            swapFolders(ptbFolder, liveFolder,
+                                Path.Combine(appFolder, Consts.LIVE_MANIFEST));
+                            break;
+                        case DBDBuild.PTB:
+                            swapFolders(liveFolder, ptbFolder,
+                                Path.Combine(appFolder, Consts.PTB_MANIFEST));
+                            break;
+                        default:
+                            Console.WriteLine(Resources.dbdInstallHow);
+                            break;
+                    }
+                });
+                if (!swapTask.Wait(TimeSpan.FromMinutes(3))) {
+                    Console.WriteLine(Resources.dbdInstallHow);
+                    MessageBox.Show(Resources.dbdLaunchTimeout, Resources.dbdLaunchTimeoutTitle,
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
             }
 

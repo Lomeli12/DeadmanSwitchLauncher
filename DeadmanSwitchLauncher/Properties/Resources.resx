@@ -184,4 +184,10 @@
   <data name="dbdDisableAutoUpdateTitle" xml:space="preserve">
     <value>Remember to disable automatic updates for DBD.</value>
   </data>
+  <data name="dbdLaunchTimeout" xml:space="preserve">
+    <value>The launcher took too long to swap builds. You may want to reinstall DBD and clear settings to setup the launcher again.</value>
+  </data>
+  <data name="dbdLaunchTimeoutTitle" xml:space="preserve">
+    <value>Launcher Timedout</value>
+  </data>
 </root>

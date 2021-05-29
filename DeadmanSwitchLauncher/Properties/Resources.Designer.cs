@@ -257,5 +257,23 @@ namespace DeadmanSwitchLauncher {
                 return ResourceManager.GetString("dbdLauncherTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The launcher took too long to swap builds. You may want to reinstall DBD and clear settings to setup the launcher again..
+        /// </summary>
+        internal static string dbdLaunchTimeout {
+            get {
+                return ResourceManager.GetString("dbdLaunchTimeout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Launcher Timedout.
+        /// </summary>
+        internal static string dbdLaunchTimeoutTitle {
+            get {
+                return ResourceManager.GetString("dbdLaunchTimeoutTitle", resourceCulture);
+            }
+        }
     }
 }
