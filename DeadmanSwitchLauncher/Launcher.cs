@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Windows.Forms;
 using DeadmanSwitchLauncher.Config;
@@ -19,6 +20,9 @@ namespace DeadmanSwitchLauncher {
             settingsBtn.Text = Resources.dbdLauncherSettings;
             launchBtn.Text = Resources.dbdLauncherStart;
 
+            liveBuildRadio.Checked = DMSLConfig.getConfig().dbdBuild == DBDBuild.LIVE;
+            ptbBuildRadio.Checked = DMSLConfig.getConfig().dbdBuild == DBDBuild.PTB;
+
             configSetup();
             setupBuilds();
         }
@@ -34,31 +38,65 @@ namespace DeadmanSwitchLauncher {
         }
 
         private void setupBuilds() {
-            liveFolder = Path.Combine(Directory.GetParent(DMSLConfig.getConfig().dbdPath).ToString(),
+            var parentDir = Directory.GetParent(DMSLConfig.getConfig().dbdPath);
+            if (parentDir == null) {
+                //TODO: Warning
+                return;
+            }
+            liveFolder = Path.Combine(parentDir.ToString(),
                 Consts.LIVE_FOLDER);
-            ptbFolder = Path.Combine(Directory.GetParent(DMSLConfig.getConfig().dbdPath).ToString(), Consts.PTB_FOLDER);
-            appFolder = Directory.GetParent(Directory.GetParent(DMSLConfig.getConfig().dbdPath).ToString()).ToString();
+            ptbFolder = Path.Combine(parentDir.ToString(), Consts.PTB_FOLDER);
+            var parentParentDir = Directory.GetParent(parentDir.ToString());
+            if (parentParentDir == null) {
+                //TODO: Warning
+                return;
+            }
+            appFolder = parentParentDir.ToString();
 
             if (!Directory.Exists(liveFolder) && !Directory.Exists(ptbFolder)) {
                 var buildPrompt = new BuildPrompt();
                 buildPrompt.ShowDialog();
 
-                processInstallFolder(buildPrompt.build, liveFolder, ptbFolder, appFolder);
+                processInstallFolder(buildPrompt.build);
+
+                MessageBox.Show(buildPrompt.build == DBDBuild.LIVE ? Resources.dbdInstallPTB :
+                    buildPrompt.build == DBDBuild.PTB ? Resources.dbdInstallLive : Resources.dbdInstallHow);
+                
+                processInstallFolder(DBDBuildUtil.opposite(buildPrompt.build));
+
+                Directory.Delete(DMSLConfig.getConfig().dbdPath);
+                
+                switch (buildPrompt.build) {
+                    case DBDBuild.LIVE:
+                        Directory.Move(liveFolder, DMSLConfig.getConfig().dbdPath);
+                        break;
+                    case DBDBuild.PTB:
+                        Directory.Move(ptbFolder, DMSLConfig.getConfig().dbdPath);
+                        break;
+                    default:
+                        Console.WriteLine(Resources.dbdInstallHow);
+                        break;
+                }
+
+                DMSLConfig.getConfig().dbdBuild = buildPrompt.build;
             }
         }
 
-        private void processInstallFolder(DBDBuild build, string live, string ptb, string app) {
+        private void processInstallFolder(DBDBuild build) {
             SteamUtil.closeSteam();
             switch (build) {
                 case DBDBuild.LIVE:
-                    Directory.Move(DMSLConfig.getConfig().dbdPath, live);
+                    Directory.Move(DMSLConfig.getConfig().dbdPath, liveFolder);
                     File.Copy(Path.Combine(appFolder, Consts.CURRENT_MANIFEST),
                         Path.Combine(appFolder, Consts.LIVE_MANIFEST));
                     break;
                 case DBDBuild.PTB:
-                    Directory.Move(DMSLConfig.getConfig().dbdPath, ptb);
+                    Directory.Move(DMSLConfig.getConfig().dbdPath, ptbFolder);
                     File.Copy(Path.Combine(appFolder, Consts.CURRENT_MANIFEST),
                         Path.Combine(appFolder, Consts.PTB_MANIFEST));
+                    break;
+                default:
+                    Console.WriteLine(Resources.dbdInstallHow);
                     break;
             }
 

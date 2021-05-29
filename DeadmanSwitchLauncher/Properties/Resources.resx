@@ -169,4 +169,13 @@
   <data name="dbdBuildPromptTitle" xml:space="preserve">
     <value>Live or PTB</value>
   </data>
+  <data name="dbdInstallLive" xml:space="preserve">
+    <value>Now please install the Live build and hit OK when it's done.</value>
+  </data>
+  <data name="dbdInstallPTB" xml:space="preserve">
+    <value>Now please install the PTB build and hit OK when it's done.</value>
+  </data>
+  <data name="dbdInstallHow" xml:space="preserve">
+    <value>How'd you end up here?</value>
+  </data>
 </root>

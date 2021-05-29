@@ -115,6 +115,24 @@ namespace DeadmanSwitchLauncher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to How&apos;d you end up here?.
+        /// </summary>
+        internal static string dbdInstallHow {
+            get {
+                return ResourceManager.GetString("dbdInstallHow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now please install the Live build and hit OK when it&apos;s done..
+        /// </summary>
+        internal static string dbdInstallLive {
+            get {
+                return ResourceManager.GetString("dbdInstallLive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Open.
         /// </summary>
         internal static string dbdInstallPromptButton {
@@ -165,6 +183,15 @@ namespace DeadmanSwitchLauncher {
         internal static string dbdInstallPromptTitle {
             get {
                 return ResourceManager.GetString("dbdInstallPromptTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now please install the PTB build and hit OK when it&apos;s done..
+        /// </summary>
+        internal static string dbdInstallPTB {
+            get {
+                return ResourceManager.GetString("dbdInstallPTB", resourceCulture);
             }
         }
         
