@@ -51,6 +51,7 @@ namespace DeadmanSwitchLauncher {
             this.clearSettingsBtn.TabIndex = 1;
             this.clearSettingsBtn.Text = "button1";
             this.clearSettingsBtn.UseVisualStyleBackColor = true;
+            this.clearSettingsBtn.Click += new System.EventHandler(this.clearSettingsBtn_Click);
             // 
             // keepOpenBox
             // 
@@ -71,6 +72,7 @@ namespace DeadmanSwitchLauncher {
             this.okBtn.TabIndex = 3;
             this.okBtn.Text = "button1";
             this.okBtn.UseVisualStyleBackColor = true;
+            this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
             // 
             // cancelBtn
             // 
@@ -81,6 +83,7 @@ namespace DeadmanSwitchLauncher {
             this.cancelBtn.TabIndex = 4;
             this.cancelBtn.Text = "button1";
             this.cancelBtn.UseVisualStyleBackColor = true;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
             // Settings
             // 
