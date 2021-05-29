@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Text;
 using Newtonsoft.Json;
 
@@ -11,6 +11,7 @@ namespace DeadmanSwitchLauncher.Config {
 
         public string dbdPath { get; set; }
         public DBDBuild dbdBuild { get; set; }
+        public bool keepOpenOnLaunch { get; set; }
 
         private static void initConfig() {
             if (!Directory.Exists(Consts.DATA_FOLDER))

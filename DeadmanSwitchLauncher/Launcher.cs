@@ -60,6 +60,7 @@ namespace DeadmanSwitchLauncher {
             }
 
             Process.Start("steam://rungameid/" + Consts.DBD_STEAM_ID);
+            if (!DMSLConfig.getConfig().keepOpenOnLaunch) Close();
         }
 
         private void swapFolders(string oldFolder, string newFolder, string newManifest) {
