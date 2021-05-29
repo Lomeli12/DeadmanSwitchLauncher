@@ -275,5 +275,95 @@ namespace DeadmanSwitchLauncher {
                 return ResourceManager.GetString("dbdLaunchTimeoutTitle", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string dbdSettingsCancel {
+            get {
+                return ResourceManager.GetString("dbdSettingsCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear settings and close launcher.
+        /// </summary>
+        internal static string dbdSettingsClear {
+            get {
+                return ResourceManager.GetString("dbdSettingsClear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        internal static string dbdSettingsClearButton {
+            get {
+                return ResourceManager.GetString("dbdSettingsClearButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your settings have been cleared and build folders cleaned out. You may want to verify DBD&apos;s integrity on Steam before you start the game or the launcher again.
+        /// </summary>
+        internal static string dbdSettingsCleared {
+            get {
+                return ResourceManager.GetString("dbdSettingsCleared", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings Cleared.
+        /// </summary>
+        internal static string dbdSettingsClearedTitle {
+            get {
+                return ResourceManager.GetString("dbdSettingsClearedTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Keep launcher open while game is running..
+        /// </summary>
+        internal static string dbdSettingsKeepLauncherOpen {
+            get {
+                return ResourceManager.GetString("dbdSettingsKeepLauncherOpen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ok.
+        /// </summary>
+        internal static string dbdSettingsOk {
+            get {
+                return ResourceManager.GetString("dbdSettingsOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to clear your settings?.
+        /// </summary>
+        internal static string dbdSettingsSure {
+            get {
+                return ResourceManager.GetString("dbdSettingsSure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Clear Settings.
+        /// </summary>
+        internal static string dbdSettingsSureTitle {
+            get {
+                return ResourceManager.GetString("dbdSettingsSureTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string dbdSettingsTitle {
+            get {
+                return ResourceManager.GetString("dbdSettingsTitle", resourceCulture);
+            }
+        }
     }
 }

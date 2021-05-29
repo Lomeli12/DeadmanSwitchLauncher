@@ -11,6 +11,7 @@ namespace DeadmanSwitchLauncher {
         private string liveFolder { get; set; }
         private string ptbFolder { get; set; }
         private string appFolder { get; set; }
+        private bool saveSettigs { get; set; } = true;
 
         public Launcher() {
             InitializeComponent();
@@ -152,7 +153,16 @@ namespace DeadmanSwitchLauncher {
         }
 
         private void launcherClosing(object sender, FormClosingEventArgs e) {
-            DMSLConfig.saveConfig();
+            if (saveSettigs)
+                DMSLConfig.saveConfig();
+        }
+
+        private void settingsBtn_Click(object sender, EventArgs e) {
+            var settings = new Settings();
+            settings.ShowDialog();
+            if (!settings.settingsCleared) return;
+            saveSettigs = false;
+            Close();
         }
     }
 }

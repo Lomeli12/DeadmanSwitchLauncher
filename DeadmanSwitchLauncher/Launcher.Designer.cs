@@ -65,6 +65,7 @@ namespace DeadmanSwitchLauncher {
             this.settingsBtn.Text = "button2";
             this.settingsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
             // 
             // dbdImageResources
             // 

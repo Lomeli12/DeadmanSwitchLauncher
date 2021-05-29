@@ -190,4 +190,34 @@
   <data name="dbdLaunchTimeoutTitle" xml:space="preserve">
     <value>Launcher Timedout</value>
   </data>
+  <data name="dbdSettingsTitle" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="dbdSettingsClear" xml:space="preserve">
+    <value>Clear settings and close launcher</value>
+  </data>
+  <data name="dbdSettingsKeepLauncherOpen" xml:space="preserve">
+    <value>Keep launcher open while game is running.</value>
+  </data>
+  <data name="dbdSettingsOk" xml:space="preserve">
+    <value>Ok</value>
+  </data>
+  <data name="dbdSettingsCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="dbdSettingsSure" xml:space="preserve">
+    <value>Are you sure you want to clear your settings?</value>
+  </data>
+  <data name="dbdSettingsSureTitle" xml:space="preserve">
+    <value>Clear Settings</value>
+  </data>
+  <data name="dbdSettingsCleared" xml:space="preserve">
+    <value>Your settings have been cleared and build folders cleaned out. You may want to verify DBD's integrity on Steam before you start the game or the launcher again</value>
+  </data>
+  <data name="dbdSettingsClearedTitle" xml:space="preserve">
+    <value>Settings Cleared</value>
+  </data>
+  <data name="dbdSettingsClearButton" xml:space="preserve">
+    <value>Clear</value>
+  </data>
 </root>

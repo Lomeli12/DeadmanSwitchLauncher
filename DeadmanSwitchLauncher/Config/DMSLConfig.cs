@@ -1,3 +1,4 @@
+﻿using System;
 using System.IO;
 using System.Text;
 using Newtonsoft.Json;
@@ -40,6 +41,34 @@ namespace DeadmanSwitchLauncher.Config {
             using (var writer = new StreamWriter(stream, Encoding.UTF8))
                 writer.Write(JsonConvert.SerializeObject(instance, Formatting.Indented));
             return instance;
+        }
+
+        public static void clearSettings() {
+            if (instance == null) return;
+            Directory.Delete(Consts.DATA_FOLDER, true);
+            try {
+                var gameParentDir = Directory.GetParent(instance.dbdPath).ToString();
+
+                var tmpFolder = Path.Combine(gameParentDir, Consts.LIVE_FOLDER);
+                if (Directory.Exists(tmpFolder))
+                    Directory.Delete(tmpFolder, true);
+                tmpFolder = Path.Combine(gameParentDir, Consts.PTB_FOLDER);
+                if (Directory.Exists(tmpFolder))
+                    Directory.Delete(tmpFolder, true);
+                try {
+                    var appParentDir = Directory.GetParent(gameParentDir).ToString();
+                    var tmpManifest = Path.Combine(appParentDir, Consts.LIVE_MANIFEST);
+                    if (File.Exists(tmpManifest))
+                        File.Delete(tmpManifest);
+                    tmpManifest = Path.Combine(appParentDir, Consts.PTB_MANIFEST);
+                    if (File.Exists(tmpManifest))
+                        File.Delete(tmpManifest);
+                } catch (NullReferenceException ex) {
+                    Console.WriteLine(@"Could not get app manifest directory. Does it not exist?");
+                }
+            } catch (NullReferenceException ex) {
+                Console.WriteLine(@"Could not get parent directory. Does it not exist?");
+            }
         }
     }
 }
