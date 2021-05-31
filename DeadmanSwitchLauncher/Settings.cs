@@ -10,6 +10,7 @@ namespace DeadmanSwitchLauncher {
             initLocalization();
 
             keepOpenBox.Checked = DMSLConfig.getConfig().keepOpenOnLaunch;
+            swapAndLaunchBox.Checked = DMSLConfig.getConfig().swapWithoutLaunch;
         }
 
         public bool settingsCleared { get; private set; }
@@ -19,6 +20,7 @@ namespace DeadmanSwitchLauncher {
             clearSettingsLabel.Text = Resources.dbdSettingsClear;
             clearSettingsBtn.Text = Resources.dbdSettingsClearButton;
             keepOpenBox.Text = Resources.dbdSettingsKeepLauncherOpen;
+            swapAndLaunchBox.Text = Resources.dbdSettingsSwap;
             okBtn.Text = Resources.dbdSettingsOk;
             cancelBtn.Text = Resources.dbdSettingsCancel;
         }
@@ -38,6 +40,7 @@ namespace DeadmanSwitchLauncher {
 
         private void okBtn_Click(object sender, EventArgs e) {
             DMSLConfig.getConfig().keepOpenOnLaunch = keepOpenBox.Checked;
+            DMSLConfig.getConfig().swapWithoutLaunch = swapAndLaunchBox.Checked;
             Close();
         }
 

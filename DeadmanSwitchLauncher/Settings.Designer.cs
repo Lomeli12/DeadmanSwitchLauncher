@@ -31,6 +31,7 @@ namespace DeadmanSwitchLauncher {
             this.keepOpenBox = new System.Windows.Forms.CheckBox();
             this.okBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.swapAndLaunchBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // clearSettingsLabel
@@ -66,10 +67,10 @@ namespace DeadmanSwitchLauncher {
             // okBtn
             // 
             this.okBtn.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.okBtn.Location = new System.Drawing.Point(353, 143);
+            this.okBtn.Location = new System.Drawing.Point(353, 220);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(143, 62);
-            this.okBtn.TabIndex = 3;
+            this.okBtn.TabIndex = 4;
             this.okBtn.Text = "button1";
             this.okBtn.UseVisualStyleBackColor = true;
             this.okBtn.Click += new System.EventHandler(this.okBtn_Click);
@@ -77,19 +78,30 @@ namespace DeadmanSwitchLauncher {
             // cancelBtn
             // 
             this.cancelBtn.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
-            this.cancelBtn.Location = new System.Drawing.Point(504, 143);
+            this.cancelBtn.Location = new System.Drawing.Point(502, 220);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(143, 62);
-            this.cancelBtn.TabIndex = 4;
+            this.cancelBtn.TabIndex = 5;
             this.cancelBtn.Text = "button1";
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            // 
+            // swapAndLaunchBox
+            // 
+            this.swapAndLaunchBox.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.swapAndLaunchBox.Location = new System.Drawing.Point(12, 151);
+            this.swapAndLaunchBox.Name = "swapAndLaunchBox";
+            this.swapAndLaunchBox.Size = new System.Drawing.Size(633, 63);
+            this.swapAndLaunchBox.TabIndex = 3;
+            this.swapAndLaunchBox.Text = "checkBox1";
+            this.swapAndLaunchBox.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 226);
+            this.ClientSize = new System.Drawing.Size(659, 294);
+            this.Controls.Add(this.swapAndLaunchBox);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.keepOpenBox);
@@ -102,6 +114,8 @@ namespace DeadmanSwitchLauncher {
             this.Text = "Settings";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.CheckBox swapAndLaunchBox;
 
         private System.Windows.Forms.CheckBox keepOpenBox;
         private System.Windows.Forms.Button okBtn;

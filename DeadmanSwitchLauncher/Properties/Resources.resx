@@ -220,4 +220,10 @@
   <data name="dbdSettingsClearButton" xml:space="preserve">
     <value>Clear</value>
   </data>
+  <data name="dbdSettingsSwap" xml:space="preserve">
+    <value>Swap without launching the DBD</value>
+  </data>
+  <data name="dbdLauncherSwap" xml:space="preserve">
+    <value>Swap Builds</value>
+  </data>
 </root>

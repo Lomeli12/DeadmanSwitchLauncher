@@ -13,6 +13,7 @@ namespace DeadmanSwitchLauncher.Config {
         public string dbdPath { get; set; }
         public DBDBuild dbdBuild { get; set; }
         public bool keepOpenOnLaunch { get; set; }
+        public bool swapWithoutLaunch { get; set; }
 
         // Checks to see if config file exists. If it does, deserialize it into an instance of config. If not, create it.
         private static void initConfig() {

@@ -29,7 +29,9 @@ namespace DeadmanSwitchLauncher {
             liveBuildRadio.Text = Resources.dbdLauncherRadioLive;
             ptbBuildRadio.Text = Resources.dbdLauncherRadioPTB;
             settingsBtn.Text = Resources.dbdLauncherSettings;
-            launchBtn.Text = Resources.dbdLauncherStart;
+            launchBtn.Text = DMSLConfig.getConfig().swapWithoutLaunch
+                ? Resources.dbdLauncherSwap
+                : Resources.dbdLauncherStart;
         }
 
         // Attempts to launch the game. If a swap is necessary, it tries to swap the builds before attempting to launch
@@ -42,6 +44,8 @@ namespace DeadmanSwitchLauncher {
                 build = DMSLConfig.getConfig().dbdBuild;
 
                 var swapTask = Task.Run(() => {
+                    var restartSteam = SteamUtil.isSteamRunning();
+                    if (restartSteam) SteamUtil.closeSteam();
                     switch (build) {
                         case DBDBuild.LIVE:
                             swapFolders(ptbFolder, liveFolder,
@@ -55,6 +59,8 @@ namespace DeadmanSwitchLauncher {
                             Console.WriteLine(Resources.dbdInstallHow);
                             break;
                     }
+
+                    if (restartSteam) SteamUtil.startSteam();
                 });
                 if (!swapTask.Wait(TimeSpan.FromMinutes(3))) {
                     Console.WriteLine(Resources.dbdInstallHow);
@@ -64,7 +70,7 @@ namespace DeadmanSwitchLauncher {
                 }
             }
 
-            Process.Start("steam://rungameid/" + Consts.DBD_STEAM_ID);
+            if (!DMSLConfig.getConfig().swapWithoutLaunch) Process.Start("steam://rungameid/" + Consts.DBD_STEAM_ID);
             if (!DMSLConfig.getConfig().keepOpenOnLaunch) Close();
         }
 
@@ -174,6 +180,7 @@ namespace DeadmanSwitchLauncher {
         private void settingsBtn_Click(object sender, EventArgs e) {
             var settings = new Settings();
             settings.ShowDialog();
+            initLocalization();
             if (!settings.settingsCleared) return;
             saveSettigs = false;
             Close();

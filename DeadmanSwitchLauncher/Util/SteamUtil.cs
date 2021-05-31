@@ -12,6 +12,9 @@ namespace DeadmanSwitchLauncher.Util {
             }
         }
 
+        // Check if steam is running at all
+        public static bool isSteamRunning() => Process.GetProcessesByName(Consts.STEAM_PROCESS).Length > 0;
+
         // It just runs steam
         public static void startSteam() {
             Process.Start(getSteamInstallPath());

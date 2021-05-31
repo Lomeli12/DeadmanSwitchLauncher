@@ -250,6 +250,15 @@ namespace DeadmanSwitchLauncher {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Swap Builds.
+        /// </summary>
+        internal static string dbdLauncherSwap {
+            get {
+                return ResourceManager.GetString("dbdLauncherSwap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Deadman Switch Launcher.
         /// </summary>
         internal static string dbdLauncherTitle {
@@ -354,6 +363,15 @@ namespace DeadmanSwitchLauncher {
         internal static string dbdSettingsSureTitle {
             get {
                 return ResourceManager.GetString("dbdSettingsSureTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Swap without launching the DBD.
+        /// </summary>
+        internal static string dbdSettingsSwap {
+            get {
+                return ResourceManager.GetString("dbdSettingsSwap", resourceCulture);
             }
         }
         
